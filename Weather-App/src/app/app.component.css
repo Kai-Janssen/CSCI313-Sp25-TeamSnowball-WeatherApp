@@ -1,0 +1,44 @@
+/* styles.css */
+
+/* Default light mode */
+:root {
+    --bg-color: #f0f8ff;
+    --text-color: #222;
+    --card-bg: #ffffff;
+    --accent-color: #3498db;
+  }
+  
+  /* Dark mode overrides */
+  body.dark-mode {
+    --bg-color: #1e1e2f;
+    --text-color: #e0e0e0;
+    --card-bg: #2c2c3c;
+    --accent-color: #4fc3f7;
+  }
+  
+  /* Apply variables */
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .weather-card {
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem auto;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  button {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
