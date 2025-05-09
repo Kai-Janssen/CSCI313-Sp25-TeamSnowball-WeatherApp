@@ -1,10 +1,7 @@
 import { Routes } from '@angular/router';
 import { OnInit } from '@angular/core';
+import { ReportFormComponent } from './report-form/report-form.component';
 
-export const routes: Routes = [];
-
-//ngOnInit(): void { // for toggling between day and night background colors
-    const hour = new Date().getHours();
-    const isNight = hour < 6 || hour >= 18;
-    document.body.classList.toggle('dark-mode', isNight);
-  //}
+export const routes: Routes = [
+  { path: 'report-form', component: ReportFormComponent }
+];
