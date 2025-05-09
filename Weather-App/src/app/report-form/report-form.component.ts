@@ -16,6 +16,7 @@ export class ReportFormComponent {
     this.issueForm = this.fb.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
+      email: ['']  
     });
   }
 

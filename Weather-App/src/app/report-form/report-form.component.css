@@ -1,0 +1,105 @@
+/* Ensure body uses full viewport height and dark theme */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  height: 100%;
+}
+
+.report-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;          /* Allows page to grow beyond initial viewport */
+  padding: 20px;
+  background-color: #121212;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+/* Form container, max-width to keep it from getting too wide */
+.max-w-xl {
+  width: 100%;
+  max-width: 600px;  /* Ensure the form doesn't stretch too wide */
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  margin: 0 10px;  /* Allow some spacing on smaller screens */
+}
+
+/* Form title */
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+/* Form labels */
+label {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Input and textarea fields */
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background-color: #333;
+  color: #fff;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Input and textarea fields on focus */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #1e90ff;
+  background-color: #444;
+}
+
+/* Submit button */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for submit button */
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Disabled submit button */
+button[type="submit"]:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+}
+
+/* Success message */
+.text-green-500 {
+  color: #28a745;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.text-green-500.mt-4 {
+  margin-top: 1.5rem;
+}
