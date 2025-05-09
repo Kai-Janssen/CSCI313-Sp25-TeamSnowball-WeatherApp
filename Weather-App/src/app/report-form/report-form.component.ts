@@ -11,13 +11,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class ReportFormComponent {
   issueForm: FormGroup;
   submitted = false;
-  priorities = ['Low', 'Medium', 'High', 'Critical'];
 
   constructor(private fb: FormBuilder) {
     this.issueForm = this.fb.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
-      priority: ['', Validators.required],
     });
   }
 
