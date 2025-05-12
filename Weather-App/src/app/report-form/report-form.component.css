@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #121212;
-  color: #fff;
+  color: #e4e4e4;
   font-family: Arial, sans-serif;
   height: 100%;
 }
@@ -14,7 +14,7 @@ body {
   align-items: center;
   min-height: 100vh;          /* Allows page to grow beyond initial viewport */
   padding: 20px;
-  background-color: #121212;
+  background-color: #131313;
   box-sizing: border-box;
   flex-direction: column;
 }
@@ -37,7 +37,7 @@ h2 {
   font-weight: 600;
   margin-bottom: 1rem;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
 }
 
 /* Form labels */
@@ -102,4 +102,23 @@ button[type="submit"]:disabled {
 
 .text-green-500.mt-4 {
   margin-top: 1.5rem;
+}
+.back-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.back-button {
+  background-color: transparent;
+  color: #ccc;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #1e90ff;
 }
