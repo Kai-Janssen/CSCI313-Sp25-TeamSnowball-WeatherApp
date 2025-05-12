@@ -1,0 +1,97 @@
+/* Container for the schedule */
+.schedule-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #d7db9e;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Navbar with clickable routes */
+.route-navbar {
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.route-navbar ul {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: #006747;
+  border-radius: 5px;
+}
+
+.route-navbar li {
+  flex-shrink: 0;
+}
+
+.route-navbar a {
+  display: block;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #FDB913;
+  white-space: nowrap;
+}
+
+.route-navbar a:hover {
+  background-color: #015a3f;
+  text-decoration: underline;
+  border-radius: 5px;
+}
+
+.search-box {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-width: 200px;
+}
+
+/* Bus schedule table styling */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  min-width: 300px;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.schedule-table th {
+  background-color: #006747;
+  color: white;
+}
+
+.schedule-table tr:nth-child(even) {
+  background-color: #e1f5e3;
+}
+
+.schedule-table tr:nth-child(odd) {
+  background-color: #fafcf0;
+}
+
+.schedule-table td:hover {
+  background-color: #7da87f;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .schedule-table th,
+  .schedule-table td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .route-navbar a {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
