@@ -2,15 +2,28 @@
 	This contains mock data that I added to show for display
 	I think I managed to label everything correctly with where the mock data is
 -->
-
 <main>
-<router-outlet />
+  <div class="container rounded p-4 shadow-sm bg-white">
+    <div class="dropdown" ngbDropdown>
+      <button class="btn btn-secondary dropdown-toggle" ngbDropdownToggle>
+        Menu
+      </button>
+      <ul class="dropdown-menu" ngbDropdownMenu>
+        <li><a class="dropdown-item" [routerLink]="['/']">Home</a></li>
+        <li>
+          <a class="dropdown-item" [routerLink]="['/bus']">Bus Schedule</a>
+        </li>
+        <li>
+          <a class="dropdown-item" [routerLink]="['/report-form']"
+            >Report an Issue</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" [routerLink]="['/admin']">Admin Portal</a>
+        </li>
+      </ul>
+    </div>
+
+    <router-outlet></router-outlet>
+  </div>
 </main>
-
-
-
-
-
-
-
-
