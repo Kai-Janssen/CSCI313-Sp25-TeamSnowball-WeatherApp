@@ -1,1 +1,40 @@
-<p>bus-schedule works!</p>
+<div class="schedule-container">
+  <h2>Bus Schedule - {{ currentStop }}</h2>
+
+  <!-- Navbar with route buttons and search -->
+  <div class="route-navbar route-navbar-flex">
+    <ul>
+      <li *ngFor="let routeName of routeData | keyvalue">
+        <a (click)="selectRoute(routeName.key)">
+          {{ routeName.key }}
+        </a>
+      </li>
+    </ul>
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      placeholder="Search destination..."
+      class="search-box"
+    />
+  </div>
+
+  <!-- Table appears only if data is present -->
+  <table class="schedule-table" *ngIf="filteredStops.length > 0">
+    <thead>
+      <tr>
+        <th>Route</th>
+        <th>Time</th>
+        <th>Destination</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stop of filteredStops">
+        <td>{{ stop.route }}</td>
+        <td>{{ stop.time }}</td>
+        <td>{{ stop.destination }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="!filteredStops.length">Please select a route or search for a destination.</p>
+</div>

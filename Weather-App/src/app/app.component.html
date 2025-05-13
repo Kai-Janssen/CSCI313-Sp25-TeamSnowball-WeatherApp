@@ -3,87 +3,8 @@
 	I think I managed to label everything correctly with where the mock data is
 -->
 
-<main class="main bg-light py-4">
-<div class="container rounded p-4 shadow-sm bg-white">
-
-	<!-- Top row, contain search, time, units, and icon -->
-	<div class="row align-items-center mb-4">
-	<div class="col-md-3">
-		<input type="text" class="form-control" placeholder="Search...">
-	</div>
-	<div class="col-md-3 text-start">
-		<!-- Mock data -->
-		<h2 class="mb-0">Fargo, ND</h2>
-	</div>
-	<div class="col-md-2 text-center">
-		<!-- Mock data -->
-		<h5 class="mb-0">XX:XX PM</h5>
-		<div class="btn-group mt-1">
-		<button class="btn btn-sm btn-outline-primary">°F</button>
-		<button class="btn btn-sm btn-outline-primary">°C</button>
-		</div>
-	</div>
-	<div class="col-md-4 text-end">
-		<!-- Weather icon can stay how it is for now just make sure it gets set to the proper path -->
-		<img src="image.png" class="img-fluid" style="max-height: 80px;">
-	</div>
-	</div>
-
-	<!-- Current Temperature -->
-	<div class="row mb-4">
-	<div class="col">
-		<!-- Mock data -->
-		<h1 class="display-2 fw-bold">75°F</h1>
-	</div>
-	</div>
-
-	<!-- Forecast Table -->
-	<div class="row mb-4">
-	<div class="col">
-		<div class="card p-3">
-		<h5>Extended Forecast</h5>
-		<table class="table text-center mt-2 mb-0">
-			<thead>
-			<tr>
-				<th></th>
-				<th>Mon</th>
-				<th>Tue</th>
-				<th>Wed</th>
-				<th>Thurs</th>
-				<th>Fri</th>
-			</tr>
-			</thead>
-			<tbody>
-			<tr>
-				<!-- Mock data -->
-				<td class="text-muted">Hi</td>
-				<td>82</td>
-				<td>80</td>
-				<td>74</td>
-				<td>72</td>
-				<td>75</td>
-			</tr>
-			<tr>
-				<!-- Mock data -->
-				<td class="text-muted">Lo</td>
-				<td>57</td>
-				<td>40</td>
-				<td>52</td>
-				<td>44</td>
-				<td>50</td>
-			</tr>
-			</tbody>
-		</table>
-		<div class="mt-2 border-top pt-2">
-			<small class="text-muted">Precip</small>
-		</div>
-		</div>
-	</div>
-	</div>
-
-	<!-- Report button placeholder -->
-	<button class="btn btn-sm btn-outline-primary">Report</button>
-</div>
+<main>
+<router-outlet />
 </main>
 
 
@@ -91,5 +12,5 @@
 
 
 
-<router-outlet />
+
 
