@@ -3,12 +3,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+
+
 @Component({
   selector: 'app-report-form',
-  imports: [ReactiveFormsModule,RouterModule],
+  imports: [ReactiveFormsModule,RouterModule, ],
   templateUrl: './report-form.component.html',
   styleUrls: ['./report-form.component.css']
 })
+
+
 export class ReportFormComponent {
   issueForm: FormGroup;
   submitted = false;
