@@ -3,7 +3,7 @@
 	I think I managed to label everything correctly with where the mock data is
 -->
 <main>
-  <div class="container rounded p-4 shadow-sm bg-white">
+  <div class="container rounded p-4 shadow-sm app-frame">
     <div class="dropdown" ngbDropdown>
       <button class="btn btn-secondary dropdown-toggle" ngbDropdownToggle>
         Menu
@@ -24,6 +24,8 @@
       </ul>
     </div>
 
-    <router-outlet></router-outlet>
+	<div class="app-container">
+      <router-outlet></router-outlet>
+	</div>
   </div>
 </main>
