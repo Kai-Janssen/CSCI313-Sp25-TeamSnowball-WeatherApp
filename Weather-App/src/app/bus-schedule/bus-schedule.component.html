@@ -18,7 +18,7 @@
     />
   </div>
 
-  <!-- Table appears only if data is present -->
+  <!-- Table appears only if there is data -->
   <table class="schedule-table" *ngIf="filteredStops.length > 0">
     <thead>
       <tr>
@@ -36,5 +36,8 @@
     </tbody>
   </table>
 
-  <p *ngIf="!filteredStops.length">Please select a route or search for a destination.</p>
+  <p *ngIf="!filteredStops.length">
+    Please select a route or search for a destination.
+  </p>
+  <img src="bison.jpg" alt="Bison" class="schedule-image" />
 </div>

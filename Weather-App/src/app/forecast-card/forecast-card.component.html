@@ -1,15 +1,37 @@
-<main class="main bg-light py-4">
+<main class="main py-4">
   <!-- Top row: search, time, units, icon -->
-  <div class="row align-items-center mb-4">
+   <div class="row align-items-center mb-4">
     <div class="col-md-3">
-      <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="city" />
-      <button class="btn btn-primary mt-2" (click)="fetchWeather()">Search</button>
+      <div class="position-relative">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search for a city..."
+          [(ngModel)]="city"
+          (input)="onSearch($event)"
+        />
+        <button class="btn btn-primary mt-2" (click)="fetchWeather()">Search</button>
+        <ul
+          class="list-group position-absolute w-100 z-3"
+          *ngIf="suggestions.length"
+          style="max-height: 200px; overflow-y: auto;"
+        >
+          <li
+            class="list-group-item list-group-item-action"
+            *ngFor="let city of suggestions"
+            (click)="selectCity(city)"
+          >
+            {{ city.name }}, {{ city.region }}, {{ city.country }}
+          </li>
+        </ul>
+      </div>
     </div>
 
     <div class="col-md-3 text-start">
       <h2 class="mb-0">
-        {{ weatherData?.location?.name || 'Fargo' }},
-        {{ weatherData?.location?.region || 'ND' }}
+        <ng-container *ngIf="weatherData?.location">
+          {{ weatherData.location.name }}, {{ weatherData.location.region }}
+        </ng-container>
       </h2>
     </div>
 
@@ -17,29 +39,45 @@
       <h5 class="mb-0">
         {{ weatherData?.location?.localtime ? (weatherData.location.localtime | date: 'shortTime') : 'XX:XX PM' }}
       </h5>
-      <div class="btn-group mt-1">
-        <button class="btn btn-sm btn-outline-primary active">°F</button>
-        <button class="btn btn-sm btn-outline-primary" disabled>°C</button>
-      </div>
     </div>
 
-    <div class="col-md-4 text-end">
+    <div class="col-md-3 text-end">
       <img
         *ngIf="weatherData?.current?.condition?.icon"
         [src]="'https:' + weatherData.current.condition.icon"
-        class="img-fluid"
-        style="max-height: 80px;"
         alt="Weather icon"
+        style="height: 200px; width: 200px;"
       />
+    </div>
+
+    <!-- Settings Dropdown -->
+    <div class="col-md-1 text-end position-relative">
+      <div class="dropdown">
+        <button class="settings-icon" type="button" id="settingsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          ⚙
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="settingsDropdown" style="min-width: 200px;">
+          <li class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="darkModeToggle" [checked]="isNight" (change)="toggleTheme()">
+            <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
+          </li>
+          <li class="form-check form-switch mt-2">
+            <input class="form-check-input" type="checkbox" id="unitToggle" [checked]="unitPreference === 'F'" (change)="toggleUnit(unitPreference === 'F' ? 'C' : 'F')">
+            <label class="form-check-label" for="unitToggle">Use °F</label>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <!-- Current Temperature -->
   <div class="row mb-4">
     <div class="col">
-      <h1 class="display-2 fw-bold">
-        {{ weatherData?.current?.temp_f !== undefined ? weatherData.current.temp_f + '°F' : '75°F' }}
-      </h1>
+      <ng-container *ngIf="weatherData?.current?.temp_f !== undefined">
+        <h1 class="display-2 fw-bold">
+          {{ unitPreference === 'F' ? weatherData.current.temp_f + '°F' : weatherData.current.temp_c + '°C' }}
+        </h1>
+      </ng-container>
     </div>
   </div>
 
@@ -61,17 +99,17 @@
             <tr>
               <td class="text-muted">Hi</td>
               <td *ngFor="let day of forecastDays">
-                {{ day.day.maxtemp_f }}°
+                {{ unitPreference === 'F' ? day.day.maxtemp_f : day.day.maxtemp_c }}°
               </td>
             </tr>
             <tr>
               <td class="text-muted">Lo</td>
               <td *ngFor="let day of forecastDays">
-                {{ day.day.mintemp_f }}°
+                {{ unitPreference === 'F' ? day.day.mintemp_f : day.day.mintemp_c }}°
               </td>
             </tr>
             <tr>
-              <td class="text-muted">Icon</td>
+              <td class="text-muted"></td>
               <td *ngFor="let day of forecastDays">
                 <img [src]="'https:' + day.day.condition.icon" alt="icon" />
               </td>

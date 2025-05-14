@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,5 +14,14 @@ export class WeatherService {
   getForecastByCity(city: string) {
     const url = `${this.apiUrl}/forecast.json?key=${this.apiKey}&q=${encodeURIComponent(city)}&days=5`;
     return this.http.get(url);
+  }
+
+  searchCities(query: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/search.json`, {
+      params: {
+        key: this.apiKey,
+        q: query
+      }
+    });
   }
 }

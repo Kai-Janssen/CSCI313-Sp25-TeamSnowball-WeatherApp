@@ -1,3 +1,4 @@
+/* Ensure body uses full viewport height and dark theme */
 body {
   margin: 0;
   padding: 0;
@@ -11,7 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;          
+  min-height: 100vh;          /* Allows page to grow beyond initial viewport */
   padding: 20px;
   background-color: #131313;
   box-sizing: border-box;
@@ -21,7 +22,7 @@ body {
 /* Form container, max-width to keep it from getting too wide */
 .max-w-xl {
   width: 100%;
-  max-width: 600px;  
+  max-width: 600px;  /* Ensure the form doesn't stretch too wide */
   background-color: #1e1e1e;
   padding: 2rem;
   border-radius: 8px;

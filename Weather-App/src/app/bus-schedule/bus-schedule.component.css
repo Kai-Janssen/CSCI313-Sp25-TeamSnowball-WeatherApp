@@ -1,10 +1,14 @@
+h2, p {
+  color: black;
+}
+
 /* Container for the schedule */
 .schedule-container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
   background-color: #d7db9e;
-  border-radius: 8px;
+  border-radius: 0;
   box-sizing: border-box;
 }
 
@@ -72,14 +76,33 @@
 
 .schedule-table tr:nth-child(even) {
   background-color: #e1f5e3;
+  color: black;
 }
 
 .schedule-table tr:nth-child(odd) {
   background-color: #fafcf0;
+  color: black;
 }
 
 .schedule-table td:hover {
   background-color: #7da87f;
+}
+
+/* Image styling */
+.schedule-image {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+  
+}
+
+/* Hide image on small viewports */
+@media (max-width: 600px) {
+  .schedule-image {
+    display: none;
+  }
 }
 
 /* Mobile responsiveness */
