@@ -5,7 +5,7 @@
 
 /* Day (default) */
 :host-context(body) .main {
-  background-color: #cce6ff; 
+  background-color: #d6ecff; 
 }
 
 .card {
@@ -17,19 +17,29 @@
 }
 
 /* Night mode */
+:host-context(body.night-theme) .main {
+  background-color: #2c2c3c;
+}
+
 :host-context(body.night-theme) .card {
   background-color: #2c2c3c;
   color: #fff;
   border: 1px solid #444;
 }
 
-:host-context(body.night-theme) table {
+:host-context(body.night-theme) .table th,
+:host-context(body.night-theme) .table td {
   background-color: #3a3a3a;
   color: #fff;
-  border-color: #666;
+  border-color: #555;
 }
 
-:host-context(body.night-theme) thead {
-  background-color: #2c2c3c;
-
+:host-context(body.night-theme) .text-muted {
+  color: #aaa !important;
 }
+
+.table th,
+.table td {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
