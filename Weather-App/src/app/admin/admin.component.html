@@ -1,1 +1,45 @@
-<p>admin works!</p>
+<div class="admin-portal">
+  <!-- Top bar with logout button -->
+  <div class="top-bar">
+    <button class="logout-button" (click)="logout()">Logout</button>
+  </div>
+
+  <!-- Main content -->
+  <div class="content">
+    <h2>Admin Portal</h2>
+
+    <div class="key-entry">
+      <input type="text" placeholder="Enter key" [(ngModel)]="apikey.apikey" />
+      @if(editApiKey){
+        <button (click)="updateApiKey()">Update</button>
+        <button (click)="resetForm()"></button>
+      }
+      @else{
+      <button class="rounded" (click)="addapikey()">Add Key</button>
+      }
+    </div>
+    <div class="key-list p-4 shadow-md">
+        <table class="key-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th><h2>List of Keys</h2></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        @for(apikey of apikeys; track apikey.id)
+        {
+            <td>{{$index + 1 }}</td>
+            <td>{{ apikey.apikey }}</td>
+            <td><button class="edit-button" (click)="setEditKeyID(apikey)">Edit</button></td>
+            <td><button class="delete-button" (click)="deleteApiKey(apikey)">Delete</button></td>
+        }
+      </tr>
+    </tbody>
+  </table>
+    </div>
+  </div>
+</div>

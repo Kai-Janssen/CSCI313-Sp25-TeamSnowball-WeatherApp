@@ -1,3 +1,7 @@
+h2, p {
+  color: black;
+}
+
 /* Container for the schedule */
 .schedule-container {
   max-width: 1000px;
@@ -72,10 +76,12 @@
 
 .schedule-table tr:nth-child(even) {
   background-color: #e1f5e3;
+  color: black;
 }
 
 .schedule-table tr:nth-child(odd) {
   background-color: #fafcf0;
+  color: black;
 }
 
 .schedule-table td:hover {

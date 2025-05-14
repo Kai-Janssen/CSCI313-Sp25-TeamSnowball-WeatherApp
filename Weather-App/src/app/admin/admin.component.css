@@ -1,58 +1,70 @@
-/* Ensure body uses full viewport height and dark theme */
-body {
-  margin: 0;
-  padding: 0;
+/* Full-page layout */
+.admin-portal {
   background-color: #121212;
   color: #e4e4e4;
   font-family: Arial, sans-serif;
-  height: 100%;
-}
-
-.report-form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;          /* Allows page to grow beyond initial viewport */
+  min-height: 100vh;
   padding: 20px;
-  background-color: #131313;
   box-sizing: border-box;
-  flex-direction: column;
 }
 
-/* Form container, max-width to keep it from getting too wide */
-.max-w-xl {
-  width: 100%;
-  max-width: 600px;  /* Ensure the form doesn't stretch too wide */
+/* Top bar for logout button */
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+/* Logout button */
+.logout-button {
+  background-color: transparent;
+  color: #ccc;
+  border: 1px solid #444;
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.logout-button:hover {
+  color: #1e90ff;
+  border-color: #1e90ff;
+}
+
+/* Main content box */
+.content {
+  max-width: 600px;
+  margin: 0 auto;
   background-color: #1e1e1e;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
-  margin: 0 10px;  /* Allow some spacing on smaller screens */
 }
 
-/* Form title */
-h2 {
+/* Page heading */
+.content h2 {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 1rem;
-  text-align: center;
   color: #ffffff;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-/* Form labels */
-label {
-  font-size: 1rem;
-  color: #ccc;
-  margin-bottom: 0.5rem;
-  display: block;
+/* Key input row */
+.key-entry {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
-/* Input and textarea fields */
-input, textarea, select {
-  width: 100%;
+/* Input field */
+.key-entry input[type="text"] {
+  flex: 1;
   padding: 12px;
-  margin-bottom: 1rem;
   border-radius: 4px;
   border: 1px solid #444;
   background-color: #333;
@@ -61,64 +73,58 @@ input, textarea, select {
   box-sizing: border-box;
 }
 
-/* Input and textarea fields on focus */
-input:focus, textarea:focus, select:focus {
+/* Input focus effect */
+.key-entry input[type="text"]:focus {
   outline: none;
   border-color: #1e90ff;
   background-color: #444;
 }
 
-/* Submit button */
-button[type="submit"] {
-  width: 100%;
-  padding: 12px;
+/* Add Key button */
+.key-entry button {
+  padding: 12px 16px;
   background-color: #1e90ff;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 4px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-/* Hover effect for submit button */
-button[type="submit"]:hover {
+.key-entry button:hover {
   background-color: #0056b3;
 }
 
-/* Disabled submit button */
-button[type="submit"]:disabled {
-  background-color: #444;
-  cursor: not-allowed;
+.key-table thead{
+  background-color: #1e1e1e;
+ 
 }
 
-/* Success message */
-.text-green-500 {
-  color: #28a745;
-  font-size: 1rem;
-  text-align: center;
-  margin-top: 1rem;
+.key-table td{
+  padding: 4px 8px;
+  border: 1px solid #444;
+  background-color: #333;
+  
 }
 
-.text-green-500.mt-4 {
-  margin-top: 1.5rem;
-}
-.back-button-container {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 10px;
-}
-
-.back-button {
-  background-color: transparent;
-  color: #ccc;
+.edit-button {
+    
+  background-color: grey;
+  color: white;
   border: none;
+  border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
-.back-button:hover {
-  color: #1e90ff;
+.delete-button {
+  background-color: #ff261e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
