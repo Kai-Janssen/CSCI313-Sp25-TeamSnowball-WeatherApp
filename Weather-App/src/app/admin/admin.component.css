@@ -102,15 +102,21 @@
  
 }
 
-.key-table td{
+.key-table {
   padding: 4px 8px;
   border: 1px solid #444;
   background-color: #333;
   
 }
 
+.button-group {
+  display: flex;
+  justify-content: flex-end; 
+  gap: 16px;                 
+  
+}
+
 .edit-button {
-    
   background-color: grey;
   color: white;
   border: none;
@@ -121,6 +127,7 @@
 }
 
 .delete-button {
+  
   background-color: #ff261e;
   color: white;
   border: none;

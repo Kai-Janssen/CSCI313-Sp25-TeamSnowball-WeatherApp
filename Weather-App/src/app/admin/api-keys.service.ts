@@ -25,13 +25,13 @@ export class ApiKeysService {
         newApiKey.id = newID;
         setDoc(keyRef, newApiKey);
     }
-    updateApiKey(editKey: Apikeys){
-        const keyRef = doc(this.firestore, 'apikeys/${editKey.id}');
-        updateDoc(keyRef, { ... editKey});
-    }
+    updateApiKey(editApiKey: Apikeys) {
+        const keyRef = doc(this.firestore, `apikeys/${editApiKey.id}`);
+        updateDoc(keyRef, { ...editApiKey });
+}
 
-    deleteApiKey(deleteApiKey: Apikeys){
-        const keyRef = doc(this.firestore, 'apikeys/${editKey.id}');
+    deleteApiKey(deleteApiKey: Apikeys) {
+        const keyRef = doc(this.firestore, `apikeys/${deleteApiKey.id}`);
         deleteDoc(keyRef);
-    }
+}
 }

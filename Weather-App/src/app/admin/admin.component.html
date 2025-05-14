@@ -21,27 +21,20 @@
 
     <!--Api Key data-->
     <div class="key-list p-4 shadow-md">
-        <table class="key-table">
-    <thead>
-      <tr>
-        <th></th>
-        <th><h2>List of Keys</h2></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr >
+        <h2>List of Keys</h2>
+        
         @for(apikey of apikeys; track apikey.id)
         {
-            <td>{{$index + 1 }}</td>
-            <td>{{ apikey.apikey }}</td>
-            <td><button class="edit-button" (click)="setEditKeyID(apikey)">Edit</button></td>
-            <td><button class="delete-button" (click)="deleteApiKey(apikey)">Delete</button></td>
+            <div class="key-table">
+            {{$index + 1 }}
+            {{ apikey.apikey }}
+            <div class = "button-group">
+            <button class="edit-button" (click)="setEditKeyID(apikey)">Edit</button>
+            <button class="delete-button" (click)="deleteApiKey(apikey)">Delete</button>
+            </div>
+          </div>
         }
-      </tr>
-    </tbody>
-  </table>
+      
     </div>
   </div>
 </div>
