@@ -23,6 +23,11 @@
   border: 1px solid #444;
 }
 
+:host-context(body.night-theme) .main {
+  background-color:#232324;
+
+}
+
 :host-context(body.night-theme) table {
   background-color: #3a3a3a;
   color: #fff;
