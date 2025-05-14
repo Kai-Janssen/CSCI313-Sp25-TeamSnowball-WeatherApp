@@ -88,6 +88,23 @@ h2, p {
   background-color: #7da87f;
 }
 
+/* Image styling */
+.schedule-image {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+  
+}
+
+/* Hide image on small viewports */
+@media (max-width: 600px) {
+  .schedule-image {
+    display: none;
+  }
+}
+
 /* Mobile responsiveness */
 @media (max-width: 600px) {
   .schedule-table th,

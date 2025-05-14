@@ -9,7 +9,7 @@ import { AuthGuard } from './admin/authGuard.guard';
 export const routes: Routes = [
   {path: '', component: ForecastCardComponent},
   { path: 'login', component: AdminLoginComponent },
-  { path: 'protected', component: AdminComponent, canActivate: [AuthGuard] },
+  { path: 'protected', component: AdminComponent, canActivate: [AuthGuard] }, //will redirect to login if not authenticated.
   { path: 'report-form', component: ReportFormComponent },
   { path: 'bus', component: BusScheduleComponent },
   

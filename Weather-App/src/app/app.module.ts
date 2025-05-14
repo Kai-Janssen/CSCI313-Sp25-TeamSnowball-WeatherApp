@@ -6,9 +6,6 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ForecastCardComponent } from './forecast-card/forecast-card.component';
-
-import { AppComponent } from './app.component';
-import { ReportFormComponent } from './report-form/report-form.component'; // Update if path differs
 import { routes } from './app.routes';
 
 

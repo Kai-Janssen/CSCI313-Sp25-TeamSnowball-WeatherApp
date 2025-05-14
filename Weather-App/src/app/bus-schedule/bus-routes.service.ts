@@ -8,6 +8,8 @@ export interface Stop {
 @Injectable({
   providedIn: 'root'
 })
+
+//mock bus route data to inject into schedule component
 export class BusRouteService {
   routeData: { [routeName: string]: Stop[] } = {
     'Route 13': [
