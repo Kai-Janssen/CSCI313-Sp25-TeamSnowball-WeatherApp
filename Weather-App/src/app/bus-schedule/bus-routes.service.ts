@@ -1,4 +1,3 @@
-// src/app/bus-route.service.ts
 import { Injectable } from '@angular/core';
 
 export interface Stop {
